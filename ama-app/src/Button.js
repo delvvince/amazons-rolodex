@@ -1,16 +1,47 @@
-// CLASS COMPONENT 
-// import React, {Component} from 'react';
+import {Component} from 'react';
+// import 
 
-// export default class Button extends Component {
-//     render() {
-//         return (<button>Super CTA</button>);
-//     }
-// }
+// const newState = { 
+//     name: { firstName: 'Ada', lastName: 'Lovelace' 
+// }};  
+
+// CLASS COMPONENT 
+export default class Button extends Component {
+    constructor(props) {
+        super(props);
+        // this.handleChange = this.handleChange.bind(this);
+        this.state = { 
+            name: { firstName: 'Ada', lastName: 'Lovelace' 
+        }};
+        // console.log(this.props);
+    }
+    render() {
+        return (
+        <button
+            onClick={this.handleChange}
+            className="btn font-semibold hover:font-light hover:bg-green-800 active:bg-green-500"
+            type='button'
+        >
+        Reset Name
+        </button>);
+    }
+}
 
 // FUNCTIONAL COMPONENT (HOOK?)
-function Button() {
-    return (
-        <button className="btn font-semibold hover:font-light hover:bg-green-800 active:bg-green-500" type="button">Super CTA</button>
-    );
-}
-export default Button;
+// child
+
+// function Button(props) {
+    
+//     // let name = props.name;
+
+
+//     return (
+//         <button 
+//         onClick={this.handleChange}
+//         className="btn font-semibold hover:font-light hover:bg-green-800 active:bg-green-500" 
+//         type="button">
+//             Change Name
+//         </button>
+//     );
+// }
+// export default Button;
