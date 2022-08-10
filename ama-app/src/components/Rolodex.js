@@ -56,9 +56,9 @@ class Rolodex extends Component {
         
         console.log(event.target.value);
         // console.log(this.state.searchInputValue);
-        // let searchInputValue = event.target.value;
+        let inputValue = event.target.value.toLocaleLowerCase();
         this.setState({
-            searchInputValue: event.target.value 
+            searchInputValue: inputValue
         })
         // return (searchInputValue);
         
@@ -110,7 +110,7 @@ class Rolodex extends Component {
         {/* { this.state.amazons.map((amazon) => { */}
 
         { 
-            this.state.amazons.filter(amazon => amazon.name.includes(this.state.searchInputValue)).map(amazon => (
+            this.state.amazons.filter(amazon => amazon.name.toLocaleLowerCase().includes(this.state.searchInputValue)).map(amazon => (
                 <div key={amazon.id} className="p-4">
                     <h3 className='font-semibold text-green-300'>{amazon.name}</h3>
                 </div>
