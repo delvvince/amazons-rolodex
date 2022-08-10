@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Welcome from './components/Welcome';
 import Rolodex from './components/Rolodex'
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <header className="App-header">
 
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
 
         <Welcome name='Amazonia' /> 
 
