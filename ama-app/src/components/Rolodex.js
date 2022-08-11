@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Link from './Link';
-import Button from '../Button';
+import Button from './Button';
 import CardList from './card-list/card-list.component';
 import SearchBox from './search-box/search-box.component';
 
@@ -95,13 +95,6 @@ class Rolodex extends Component {
 
             <h1 className='p-8'>Amazons Rolodex</h1>
 
-            <input 
-                className=' hidden search-box text-green-900 my-8 w-1/2' 
-                type='search' 
-                placeholder='search amazons' 
-                onChange={ handleSearchInput }
-            />
-
             <SearchBox handleSearchInput={handleSearchInput} placeholder={'search amazons'} className='search-box text-green-900 my-8 w-1/2' />
             <CardList amazons={searchedAmazons} anything={[ 'a', 'z']} />
             
@@ -113,7 +106,7 @@ class Rolodex extends Component {
                     };
                 });
             }}
-            className="btn font-semibold hover:font-light hover:bg-green-800 active:bg-green-500" 
+            className="btn font-semibold hover:font-light hover:bg-green-800 active:bg-green-500 " 
             type="button">
                 Change Name
             </button>

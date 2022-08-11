@@ -1,5 +1,7 @@
 import { Component } from "react";
 
+import './card-list.styles.css';
+
 class CardList extends Component {
     render() {
         console.log('render from CardList');
@@ -7,12 +9,13 @@ class CardList extends Component {
         const { amazons } = this.props;
 
         return (
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+            <div className='flex flex-wrap justify-center'>
                 {/* CardList Component */}
                 { 
                 amazons.map(amazon => (
-                    <div key={amazon.id} className="p-4">
-                        <h3 className='font-semibold text-green-300'>{amazon.name}</h3>
+                    <div key={amazon.id} className="card-container p-4">
+                        <img alt={`amazon ${amazon.name}`} src={`https://robohash.org/${amazon.id}?set=set2&size=180x180`} />
+                        <h3 className='card-title font-semibold text-green-300'>{amazon.name}</h3>
                     </div>
                 ))
                 }
