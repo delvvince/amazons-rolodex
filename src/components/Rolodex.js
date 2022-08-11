@@ -89,11 +89,11 @@ class Rolodex extends Component {
          
         return (
         <div className='flex flex-col items-center justify-center w-max-fit py-16'>
-            <p className='text-xl font-semibold' >
+            <p className='text-white text-xl font-semibold' >
                 Hi {name.firstName} {name.lastName}, I work with {company}.
             </p>
 
-            <h1 className='p-8 font-semibold'>Amazons Rolodex</h1>
+            <h1 className='p-8 text-green-300 text-3xl font-semibold'>Amazons Rolodex</h1>
 
             <SearchBox handleSearchInput={handleSearchInput} placeholder={'search amazons'} className='search-box text-green-900 my-8 w-1/2' />
             <CardList amazons={searchedAmazons} anything={[ 'a', 'z']} />
