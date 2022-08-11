@@ -7,18 +7,19 @@ import {Component} from 'react';
 
 // CLASS COMPONENT 
 export default class Button extends Component {
+
     constructor(props) {
         super(props);
         // this.handleChange = this.handleChange.bind(this);
         this.state = { 
-            name: { firstName: 'Ada', lastName: 'Lovelace' 
-        }};
+            name: { firstName: 'Ada', lastName: 'Lovelace' },
+        };
         // console.log(this.props);
     }
     render() {
         return (
         <button
-            onClick={this.handleChange}
+            onClick={ event => { this.props.onClick(event.target.value)} }
             className="btn font-semibold hover:font-light hover:bg-green-800 active:bg-green-500"
             type='button'
         >

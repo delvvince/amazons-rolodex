@@ -8,7 +8,7 @@ class Rolodex extends Component {
         super(props);
 
         // this.changeName = this.changeName.bind(this);
-        // this.handleChange = this.handleChange.bind(this);
+        this.handleTextChange = this.handleTextChange.bind(this);
         this.handleSearchInput = this.handleSearchInput.bind(this);
 
         this.state = {
@@ -56,24 +56,25 @@ class Rolodex extends Component {
         
         console.log(event.target.value);
         // console.log(this.state.searchInputValue);
-        let inputValue = event.target.value.toLocaleLowerCase();
+        let searchField = event.target.value.toLocaleLowerCase();
         this.setState({
-            searchInputValue: inputValue
+            searchInputValue: searchField
         })
         // return (searchInputValue);
-        
     }
 
-    handleChange(event) {
-        event.preventDefault();
-        console.log('Handle state: ' + event );
+    handleTextChange() {
+        // event.preventDefault();
+        // const { name } = this.state;
+        // console.log('Handle state: ' + name.lastName );
+        // let newName = { name: { firstName: 'ADA', lastName: 'DATA' } };
+        // this.setState({ newName });
         this.setState(() => {
             return {
-                name: { firstName: 'ADA', lastName: 'DATA' },
+                name: { firstName: 'Vincent', lastName: 'Delaleu' },
             };
         });
-        // console.log(e);
-    }
+    };
 
     // changeName(e) {
     //     e.preventDefault();
@@ -86,56 +87,60 @@ class Rolodex extends Component {
     // }
 
     render() {
+        console.log('render');
+        const { name, company, amazons, searchInputValue } = this.state;
+        const { handleSearchInput, handleTextChange } = this;
         // let amazons;
         // let searchInputValue;
-
-        console.log('render');
+        let searchedAmazons = amazons.filter(amazon => { 
+            return amazon.name.toLocaleLowerCase().includes(searchInputValue);
+        });
          
         return (
-        <div className='flex flex-col items-center justify-center w-max'>
-        <p className='text-xl font-semibold' >
-            Hi {this.state.name.firstName} {this.state.name.lastName}, I work with {this.state.company}.
-        </p>
+        <div className='flex flex-col items-center justify-center w-max-fit'>
+            <p className='text-xl font-semibold' >
+                Hi {name.firstName} {name.lastName}, I work with {company}.
+            </p>
 
-        <h1>Amazons Rolodex</h1>
+            <h1 className='p-8'>Amazons Rolodex</h1>
 
-        <input 
-            className='search-box text-green-900 my-8' 
-            type='search' 
-            placeholder='search amazons' 
-            onChange={ this.handleSearchInput }
-        />
+            <input 
+                className='search-box text-green-900 my-8 w-1/2' 
+                type='search' 
+                placeholder='search amazons' 
+                onChange={ handleSearchInput }
+            />
 
-        <div className='grid grid-cols-3'>
-        {/* { this.state.amazons.map((amazon) => { */}
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+            {/* { this.state.amazons.map((amazon) => { */}
 
-        { 
-            this.state.amazons.filter(amazon => amazon.name.toLocaleLowerCase().includes(this.state.searchInputValue)).map(amazon => (
-                <div key={amazon.id} className="p-4">
-                    <h3 className='font-semibold text-green-300'>{amazon.name}</h3>
-                </div>
-            ))
-        }
-        </div>
+            { 
+                searchedAmazons.map(amazon => (
+                    <div key={amazon.id} className="p-4">
+                        <h3 className='font-semibold text-green-300'>{amazon.name}</h3>
+                    </div>
+                ))
+            }
+            </div>
 
-        <button 
-        onClick={() => {
-            this.setState(() => {
-                return {
-                    name: { firstName: 'David', lastName: 'Morard' },
-                };
-            });
-        }}
-        className="btn font-semibold hover:font-light hover:bg-green-800 active:bg-green-500" 
-        type="button">
-            Change Name
-        </button>
+            <button 
+            onClick={() => {
+                this.setState(() => {
+                    return {
+                        name: { firstName: 'David', lastName: 'Morard' },
+                    };
+                });
+            }}
+            className="btn font-semibold hover:font-light hover:bg-green-800 active:bg-green-500" 
+            type="button">
+                Change Name
+            </button>
 
-        <Button 
-            handleChange={this.props.handleChange} 
-            className="button" 
-            to='/' 
-            onClick={this.props.onClick} />
+            <Button 
+                // handleChange={this.props.handleChange} 
+                className="button" 
+                // to='/' 
+                onClick={ handleTextChange } />
 
         </div>
         );
