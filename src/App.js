@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
 
-      <header className="App-header py-16">
+      <header className="App-header py-16 backdrop-blur-md bg-white/30">
 
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
 
