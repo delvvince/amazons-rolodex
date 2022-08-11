@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/amazons-rolodex/static/css/main.21c3e8b2.css",
+    "main.js": "/amazons-rolodex/static/js/main.523125fb.js",
+    "static/js/440.1cbae0a0.chunk.js": "/amazons-rolodex/static/js/440.1cbae0a0.chunk.js",
+    "index.html": "/amazons-rolodex/index.html",
+    "main.21c3e8b2.css.map": "/amazons-rolodex/static/css/main.21c3e8b2.css.map",
+    "main.523125fb.js.map": "/amazons-rolodex/static/js/main.523125fb.js.map",
+    "440.1cbae0a0.chunk.js.map": "/amazons-rolodex/static/js/440.1cbae0a0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.21c3e8b2.css",
+    "static/js/main.523125fb.js"
+  ]
+}
