@@ -7,13 +7,12 @@ import Rolodex from './components/Rolodex'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+
+      <header className="App-header py-16">
 
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
 
         <Welcome name='Amazonia' /> 
-
-        <Rolodex />
 
         {/* <a
           className="App-link"
@@ -27,6 +26,9 @@ function App() {
         {/* <Button /> */}
 
       </header>
+
+      <Rolodex className="py-16" />
+
     </div>
   );
 }
