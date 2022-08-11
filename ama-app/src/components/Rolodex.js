@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
+import Link from './Link';
 import Button from '../Button';
+import CardList from './card-list/card-list.component';
+import SearchBox from './search-box/search-box.component';
 
 // const { render, search } = useFilters();
 class Rolodex extends Component {
     constructor(props) {
-        console.log('constructor');
+        // console.log('constructor');
         super(props);
-
-        // this.changeName = this.changeName.bind(this);
-        this.handleTextChange = this.handleTextChange.bind(this);
-        this.handleSearchInput = this.handleSearchInput.bind(this);
 
         this.state = {
             name: { firstName: 'Vincent', lastName: 'Delaleu' },
@@ -34,10 +33,14 @@ class Rolodex extends Component {
             //     },
             // ]
         };
+
+        this.handleTextChange = this.handleTextChange.bind(this);
+        this.handleSearchInput = this.handleSearchInput.bind(this);
+
     }
 
     componentDidMount() {
-        console.log('componentDidMount');
+        // console.log('componentDidMount');
         fetch('https://jsonplaceholder.typicode.com/users')
             .then((response) => response.json())
             .then((users) => this.setState(() => {
@@ -50,11 +53,9 @@ class Rolodex extends Component {
         ));
     }
 
-    // const [ name, setText ] = useState();
-
     handleSearchInput(event) {
         
-        console.log(event.target.value);
+        // console.log(event.target.value);
         // console.log(this.state.searchInputValue);
         let searchField = event.target.value.toLocaleLowerCase();
         this.setState({
@@ -76,22 +77,12 @@ class Rolodex extends Component {
         });
     };
 
-    // changeName(e) {
-    //     e.preventDefault();
-    //     console.log('Change state');
-    //     this.setState(() => {
-    //         return {
-    //             name: { firstName: 'David', lastName: 'Morard' },
-    //         };
-    //     });
-    // }
-
     render() {
-        console.log('render');
+        // console.log('render');
+        // console.log('this.props');
+
         const { name, company, amazons, searchInputValue } = this.state;
         const { handleSearchInput, handleTextChange } = this;
-        // let amazons;
-        // let searchInputValue;
         let searchedAmazons = amazons.filter(amazon => { 
             return amazon.name.toLocaleLowerCase().includes(searchInputValue);
         });
@@ -105,24 +96,15 @@ class Rolodex extends Component {
             <h1 className='p-8'>Amazons Rolodex</h1>
 
             <input 
-                className='search-box text-green-900 my-8 w-1/2' 
+                className=' hidden search-box text-green-900 my-8 w-1/2' 
                 type='search' 
                 placeholder='search amazons' 
                 onChange={ handleSearchInput }
             />
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-            {/* { this.state.amazons.map((amazon) => { */}
-
-            { 
-                searchedAmazons.map(amazon => (
-                    <div key={amazon.id} className="p-4">
-                        <h3 className='font-semibold text-green-300'>{amazon.name}</h3>
-                    </div>
-                ))
-            }
-            </div>
-
+            <SearchBox handleSearchInput={handleSearchInput} placeholder={'search amazons'} className='search-box text-green-900 my-8 w-1/2' />
+            <CardList amazons={searchedAmazons} anything={[ 'a', 'z']} />
+            
             <button 
             onClick={() => {
                 this.setState(() => {
@@ -142,6 +124,7 @@ class Rolodex extends Component {
                 // to='/' 
                 onClick={ handleTextChange } />
 
+            <Link />
         </div>
         );
     }
