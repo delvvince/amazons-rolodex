@@ -92,7 +92,7 @@ class Rolodex extends Component {
 
             <h1 className='p-8 text-green-300 text-3xl font-semibold'>Amazons Rolodex</h1>
 
-            <SearchBox handleSearchInput={handleSearchInput} placeholder={'search amazons'} className='search-box text-green-900 my-8 w-1/2' />
+            <SearchBox handleSearchInput={handleSearchInput} placeholder={'search amazons'} className='search-box text-green-900 my-8 lg:w-1/3' />
             <CardList amazons={searchedAmazons} anything={[ 'a', 'z']} />
             
             <p className='text-white text-xl font-semibold py-8' >

@@ -9,7 +9,7 @@ class CardList extends Component {
         const { amazons } = this.props;
 
         return (
-            <div className='flex flex-wrap justify-center'>
+            <div className='card-list flex flex-wrap justify-center'>
                 {/* CardList Component */}
                 { 
                 amazons.map((amazon) => {
