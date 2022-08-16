@@ -90,7 +90,7 @@ class Rolodex extends Component {
         return (
         <div className='flex flex-col items-center justify-center w-max-fit py-16'>
 
-            <h1 className='p-8 text-green-300 text-3xl font-semibold'>Amazons Rolodex</h1>
+            <h1 className='p-8 text-green-300 text-6xl font-semibold'>Amazons Rolodex</h1>
 
             <SearchBox handleSearchInput={handleSearchInput} placeholder={'search amazons'} className='search-box text-green-900 my-8 lg:w-1/3' />
             <CardList amazons={searchedAmazons} anything={[ 'a', 'z']} />

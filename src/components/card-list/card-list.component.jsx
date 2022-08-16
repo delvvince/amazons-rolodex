@@ -1,5 +1,5 @@
 import { Component } from "react";
-
+import Card from "../card/card.component";
 import './card-list.styles.css';
 
 class CardList extends Component {
@@ -13,13 +13,8 @@ class CardList extends Component {
                 {/* CardList Component */}
                 { 
                 amazons.map((amazon) => {
-                    const { name, email, id } = amazon;
                     return (
-                        <div key={id} className="card-container p-4">
-                        <img alt={`amazon ${name}`} src={`https://robohash.org/${id}?set=set9&size=180x180`} />
-                        <h3 className='card-title font-semibold text-green-300'>{name}</h3>
-                        <p className="text-white">{email}</p>
-                        </div>
+                        <Card amazon={amazon} />
                     )
                 })
                 }
@@ -29,3 +24,10 @@ class CardList extends Component {
 }
 
 export default CardList;
+
+
+// {/* <div key={id} className="card-container p-4">
+// <img alt={`amazon ${name}`} src={`https://robohash.org/${id}?set=set9&size=180x180`} />
+// <h3 className='card-title font-semibold text-green-300'>{name}</h3>
+// <p className="text-white">{email}</p>
+// </div> */}
