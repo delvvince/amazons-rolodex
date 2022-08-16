@@ -1,15 +1,9 @@
 import { Component } from "react";
 import './card.styles.css';
-
 class Card extends Component {
     
-    // constructor(props) {
-    //     super(props);
-    // }
-
     render() {
-        console.log('render Card here');
-        // const { amazons } = this.props;
+        // console.log('render Card here');
         const { name, email, id } = this.props.amazon;
 
         return(
