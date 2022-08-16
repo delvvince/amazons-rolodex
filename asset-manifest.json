@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/amazons-rolodex/static/css/main.ce40ccf6.css",
-    "main.js": "/amazons-rolodex/static/js/main.c831df98.js",
+    "main.css": "/amazons-rolodex/static/css/main.3733ed0f.css",
+    "main.js": "/amazons-rolodex/static/js/main.49b314ff.js",
     "static/js/440.1cbae0a0.chunk.js": "/amazons-rolodex/static/js/440.1cbae0a0.chunk.js",
     "index.html": "/amazons-rolodex/index.html",
-    "main.ce40ccf6.css.map": "/amazons-rolodex/static/css/main.ce40ccf6.css.map",
-    "main.c831df98.js.map": "/amazons-rolodex/static/js/main.c831df98.js.map",
+    "main.3733ed0f.css.map": "/amazons-rolodex/static/css/main.3733ed0f.css.map",
+    "main.49b314ff.js.map": "/amazons-rolodex/static/js/main.49b314ff.js.map",
     "440.1cbae0a0.chunk.js.map": "/amazons-rolodex/static/js/440.1cbae0a0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ce40ccf6.css",
-    "static/js/main.c831df98.js"
+    "static/css/main.3733ed0f.css",
+    "static/js/main.49b314ff.js"
   ]
 }
